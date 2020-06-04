@@ -1,0 +1,58 @@
+---
+title: "Day 4 Homework"
+date: 2020-06-04
+output: html_document
+---
+
+# Before you start working on this assignment, complete the primer **Write Functions**. You don't have to complete all the tutorials. Only, complete *Function Basics*, *How to Write a Function*, and *Arguments*.
+
+In the left sidebar, click Primers (you can hold Ctrl or Cmd when you click Primers to open it in a new browser window).
+
+# Homework starts below.
+
+Run the setup chunk below. Hint: click the green play button on the right side of the chunk.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(readxl)
+```
+
+## Question 1
+
+You will be joining two imaginary datasets on the population of unicorns at multiples places overtime and number of unicycles in those countries. To learn more about this imaginary data tables, go to: https://github.com/RMHogervorst/unicorns_on_unicycles#about
+
+- Import `observations.csv`. Name the resulting data frame `obs`
+
+- Import `sales.xlsx`. Select only first 3 columns using the `select()` function. Then, use the `rename()` function to change the `name_of_country...1` to `countryname`, `year...2` to `year`. To learn more about `rename()`, look at its help pages. Hint: you should connect all these steps by using `%>%`s. 
+
+- Save the resulting data frame in `sales`. `sales` should have only three columns at this point, countryname, year, and bikes.
+
+- Apply `left_join()` on `obs` and `sales`. Name the resulting data frame `joined`
+
+- Using the `joined` data frame, create a scatter plot with `pop` on x-axis and `bikes` on y-axis. you should use `geom_point()` geom. Use the `color` aesthetic on variable `countryname`.
+
+```{r}
+
+```
+
+## Question 2
+
+2.1 For the `sales` dataframe, calculate the sum of `bikes` by `countryname`
+
+2.2 put the code written in 2.1 in a function named `unicorn_sum`. `unicorn_sum` should take two arguments `df` and `variable`, and it should output a data frame that has sum of `variable` for each `countryname`. We did something similar to this in the class today.
+
+2.3 Now, apply `unicorn_sum()` to dataframe `obs` and variable `pop`.
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
